@@ -1,21 +1,17 @@
-'use client'
-
+"use client"
 // components/CountryForm.tsx
 
-import { useState, useEffect, ReactNode } from 'react';
+import { useState, useEffect } from 'react';
 
 const CountryForm: React.FC = () => {
-  const [countries, setCountries] = useState<{
-    name: ReactNode;
-    code: string | number | readonly string[] | undefined; countries: string
-}[]>([]);
+  const [countries, setCountries] = useState<{ name: string; code: string }[]>([]);
   const [selectedCountry, setSelectedCountry] = useState<string>('');
 
   useEffect(() => {
     // Fetch countries data from an API
     const fetchCountries = async () => {
       try {
-        const response = await fetch('http://localhost:4001/api/countries'); // Assuming you have an API endpoint to fetch countries
+        const response = await fetch(''); // Assuming you have an API endpoint to fetch countries
         if (response.ok) {
           const data = await response.json();
           setCountries(data);
@@ -37,12 +33,11 @@ const CountryForm: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:4001/api/users', {
+      const response = await fetch('/api/saveCountry', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        credentials: 'include',
         body: JSON.stringify({ country: selectedCountry })
       });
       if (response.ok) {

@@ -1,10 +1,11 @@
-import CountryForm from '@/components/forms/registration/CountryForm'
+
+import GetDivisions from '@/components/forms/registration/getDivisions'
 import React from 'react'
 
 const Login = () => {
   return (
     <div>
-      <CountryForm />
+      <GetDivisions />
     </div>
   )
 }

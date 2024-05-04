@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/axios": "^0.14.0",
     "@types/pdfkit": "^0.13.4",
+    "axios": "^1.6.8",
     "next": "14.2.3",
     "pdfkit": "^0.15.0",
     "react": "^18",
