@@ -71,7 +71,11 @@ const GetDivisions: React.FC = () => {
           {
             selectedDivision && (
                   <div>
-                    <p>Selected Division: {selectedDivision}</p>
+            {
+              divisions.filter((division) => division._id === selectedDivision).map((division) => (
+                <><div key={division._id}></div><h2>{division.name}</h2><p>{division.description}</p></>
+              ))
+                   }
               </div>
             )
           }
