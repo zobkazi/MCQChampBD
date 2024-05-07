@@ -8,9 +8,7 @@ const initialValues = {
   responsibilities: "",
   qualifications: "",
   occupationalCategory: "",
-  jobLocation: {
-    address: "",
-  },
+  jobLocation: "",
   jobBenefits: "",
   industry: "",
   incentiveCompensation: "",
@@ -18,31 +16,13 @@ const initialValues = {
   employmentType: "",
   educationRequirements: "",
   description: "",
-  companyInfo: {
-    name: "",
-    logo: "",
-  },
+  companyInfo: "",
   companyUrl: "",
   companyDescription: "",
   companySize: "",
   companyLocation: "",
-  baseSalary: {
-    currency: "",
-    amount: "",
-    unit: "",
-    period: "",
-    description: "",
-    display: "",
-  },
-  contactInfo: {
-    tel: "",
-    email: "",
-    address: {
-      city: "",
-      street: "",
-      houseNumber: "",
-    },
-  },
+  baseSalary: "",
+  contactInfo: "",
 };
 
 export default initialValues;

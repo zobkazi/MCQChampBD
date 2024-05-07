@@ -1,12 +1,11 @@
-import CreateJob from "@/components/forms/createJob/CreateJob";
-import JobCreateForm from "@/components/forms/createJob/JobCreateForm";
+import GetJobPage from "@/components/forms/createJob/GetJobPage";
 
 import React from "react";
 
 function Jobs() {
   return (
     <div>
-      <JobCreateForm />
+      <GetJobPage />
     </div>
   );
 }

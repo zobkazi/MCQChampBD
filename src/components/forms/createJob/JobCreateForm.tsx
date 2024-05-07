@@ -13,7 +13,7 @@ const JobCreateForm = () => {
     event.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:4003/api/v1/create-job", {
+      const response = await fetch("http://localhost:4099/api/v1/create-job", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -47,7 +47,7 @@ const JobCreateForm = () => {
 
   return (
     <div>
-      <div className="grid grid-cols-3 gap-3 mb-6 md:grid-cols-3">
+      <div className="grid grid-cols-3 gap-3">
         <form onSubmit={handleSubmit} className="">
           <div>
             <FormField
@@ -62,7 +62,7 @@ const JobCreateForm = () => {
             <FormField
               name="workHours"
               type="text"
-              placeholder="Enter title"
+              placeholder="Enter workHours"
               value={formData.workHours}
               onChange={handleChange}
             />
@@ -135,10 +135,10 @@ const JobCreateForm = () => {
           </div>
           <div>
             <FormField
-              name="jobLocation.address"
+              name="jobLocation"
               type="text"
-              placeholder="Enter jobLocation.address"
-              value={formData.jobLocation.address}
+              placeholder="Enter jobLocation"
+              value={formData.jobLocation}
               onChange={handleChange}
             />
           </div>
@@ -207,22 +207,14 @@ const JobCreateForm = () => {
           </div>
           <div>
             <FormField
-              name="companyInfo.name"
+              name="companyInfo"
               type="text"
-              placeholder="Enter companyInfo.name"
-              value={formData.companyInfo.name}
+              placeholder="Enter companyInfo"
+              value={formData.companyInfo}
               onChange={handleChange}
             />
           </div>
-          <div>
-            <FormField
-              name="companyInfo.logo"
-              type="text"
-              placeholder="Enter companyInfo.logo"
-              value={formData.companyInfo.logo}
-              onChange={handleChange}
-            />
-          </div>
+
           <div>
             <FormField
               name="companyUrl"
@@ -250,15 +242,7 @@ const JobCreateForm = () => {
               onChange={handleChange}
             />
           </div>
-          <div>
-            <FormField
-              name="companySize"
-              type="text"
-              placeholder="Enter companySize"
-              value={formData.companySize}
-              onChange={handleChange}
-            />
-          </div>
+
           <div>
             <FormField
               name="companyLocation"
@@ -270,100 +254,20 @@ const JobCreateForm = () => {
           </div>
           <div>
             <FormField
-              name="baseSalary.currency"
-              type="text"
-              placeholder="Enter baseSalary.currency"
-              value={formData.baseSalary.currency}
+              name="baseSalary"
+              type=" text"
+              placeholder="Enter baseSalary amount"
+              value={formData.baseSalary}
               onChange={handleChange}
             />
           </div>
+
           <div>
             <FormField
-              name="baseSalary.amount"
+              name="contactInfo"
               type="text"
-              placeholder="Enter baseSalary.amount"
-              value={formData.baseSalary.amount}
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <FormField
-              name="baseSalary.unit"
-              type="text"
-              placeholder="Enter aseSalary.unit"
-              value={formData.baseSalary.unit}
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <FormField
-              name="baseSalary.period"
-              type="text"
-              placeholder="Enter baseSalary.period"
-              value={formData.baseSalary.period}
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <FormField
-              name="baseSalary.description"
-              type="text"
-              placeholder="Enter baseSalary.description"
-              value={formData.baseSalary.description}
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <FormField
-              name="baseSalary.display"
-              type="text"
-              placeholder="Enter baseSalary.display"
-              value={formData.baseSalary.display}
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <FormField
-              name="contactInfo.tel"
-              type="text"
-              placeholder="Enter contactInfo.tel"
-              value={formData.contactInfo.tel}
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <FormField
-              name="contactInfo.email"
-              type="text"
-              placeholder="Enter contactInfo.email"
-              value={formData.contactInfo.email}
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <FormField
-              name="contactInfo.address.city"
-              type="text"
-              placeholder="Enter contactInfo.address.city"
-              value={formData.contactInfo.address.city}
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <FormField
-              name="contactInfo.address.street"
-              type="text"
-              placeholder="Enter contactInfo.address.street"
-              value={formData.contactInfo.address.street}
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <FormField
-              name="contactInfo.address.houseNumber"
-              type="text"
-              placeholder="Enter salaryCurrency"
-              value={formData.contactInfo.address.houseNumber}
+              placeholder="Enter contactInfo"
+              value={formData.contactInfo}
               onChange={handleChange}
             />
           </div>
