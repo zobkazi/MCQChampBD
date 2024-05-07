@@ -6,7 +6,7 @@ import axios from "axios";
 import queryString from "query-string";
 import Link from "next/link";
 
-const GetJobPage: React.FC = () => {
+const GetAllJobPage: React.FC = () => {
   const [jobs, setJobs] = useState([]);
   const [pagination, setPagination] = useState({
     page: 1,
@@ -44,9 +44,10 @@ const GetJobPage: React.FC = () => {
       <h1 className="text-3xl font-bold mb-4">All Jobs</h1>
       <div className="grid grid-cols-3 gap-4">
         {jobs.map((job: any) => (
-          <div key={job.id}>
+          <div key={job._id}>
             <Link
-              href={`../../../app/jobs/${job.id}`}
+              href={`/job/${job.id}`}
+              key={job._id}
               className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
             >
               <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -55,6 +56,8 @@ const GetJobPage: React.FC = () => {
               <p className="font-normal text-gray-700 dark:text-gray-400">
                 {job.description}
               </p>
+
+              <p className="text-2xl text-white">{job._id}</p>
 
               <button
                 type="button"
@@ -86,4 +89,4 @@ const GetJobPage: React.FC = () => {
   );
 };
 
-export default GetJobPage;
+export default GetAllJobPage;
